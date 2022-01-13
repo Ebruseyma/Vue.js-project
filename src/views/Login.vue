@@ -1,57 +1,126 @@
 <template>
+<body>
 <article>
+  <div class="Login">
   <div class="Icon">
     <div class="Material-icon">
       <div class="Union">
-        <div class="Material-icon-image" img src="D:\otokocassignment\otokoc\src\assets\Material-icon-image.png">
-          <div class="Path">
+        <div class="Material-icon-image">
+          <div class="Path" img alt="material-icon" src="../assets/Material-icon-image.png" />
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div>
+
+
   <div class="Group-1">
-  <div>
-    <div class="Textual">
-        <div class="ICON">
-          <div class="Union">
-           <div class=" Material-icon_chevron-right">
-             <div class="Path">
-             </div>
-            </div>
+    <div class="Textual"> 
+      <div class="ICON"> 
+        <div class="Union">  
+          <div class="Material-icon_chevron-right"> </div>
           </div>
-        </div>
-        <div class="LABEL">
-        </div>
-        <div class="GIRIS">
-        </div>
-        <div class="_Text-state" >
-          
-          <div class="INPUT">
           </div>
-        </div>
-        <div class="_Text-state" password>
-          <div class="INPUT">
-          </div>
-        </div>
-        
-          </div>
-        </div>
+         
+    <div class="LABEL"> 
+         <button class="btn btn-primary pull-right" @click="login()"  v-on:keyup.enter="login" type="submit" >Giriş yap</button>
+     </div>
       </div>
+    <div class="GIRIS"> </div>
+    <div class="_Text-state" > <input type="text" v-model="username"  id="username" placeholder="Email / Kullanıcı adı" >
+        <label for="username"></label> 
+        </div>
+      <div class="INPUT">     </div>
+    <div class="_Text-state1" > 
+      <input type="password" id="Password" placeholder="Şifre"  v-model="password"  >
+        <label for="Password"></label>   
+    </div>
+      <div class="INPUT"></div>
   </div>
   
+
+
+<div class="Error-Message" >
+<div class="Icon" >
+<div class="Material-icon" >
+  <div class="Union" >
+    <div class="Material-icon_close" >
+      <div class="Path" ></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="Frame-2" >
+  <div class="Frame-1" >
+    <div class="Description" ></div>
+    <div class="Title" ></div>
+  </div>
+  <div class="_Icon" >
+    <div class="Union" >
+      <div class="Material-icon_error" >
+        <div class="Path" img alt="material-error" src="../assets/Path.png" /> </div>
+      </div>
+    </div>
+  </div>
+<div class="Line-1" > </div>
+</div>
+
+<div class="Otokoc-Otomotiv-Logo-1"> </div>
+</div>
 </article>
+</body>
 </template>
 
 <script>
- export default{
-   name='Login'
- }
+ export default {
+ methods:{
+   login(){
+   this.$router.push('/dashboard'); 
+   this.$router.push({name:'dashboard', params: {id: '[paramdata]'}}); 
+
+      }
+  }
+  
+}
 </script>
 
 <style>
+.Login{
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+}
+
+.INPUT{
+  position: static;
+width: 447px;
+height: 24px;
+left: calc(50% - 447px/2);
+top: calc(50% - 24px/2);
+
+/* Body / Default */
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+font-feature-settings: 'tnum' on, 'lnum' on;
+
+color: #94A3B8;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+margin: 0px 6px;
+
+}
 .Icon{
 position: absolute;
 width: 720px;
@@ -103,27 +172,15 @@ left: 800px;
 top: 363px;
 
 
-
-/* _Text state */
-
 /* Auto layout */
-display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 12px 8px;
 
 position: absolute;
 width: 463px;
-height: 48px;
 left: 800px;
 top: 451px;
-
-/* White */
-background: #FFFFFF;
-/* Grey / Light */
-border: 1px solid #E2E8F0;
-box-sizing: border-box;
-border-radius: 2px;
 
 }
 
@@ -137,8 +194,8 @@ padding: 12px 24px;
 position: absolute;
 width: 139px;
 height: 48px;
-left: 1124px;
-top: 612px;
+left: 120px;
+top: 130px;
 
 /* Black */
 border: 1px solid #0F172A;
@@ -175,7 +232,7 @@ background: #0F172A;
 }
 
 
-.Material-icon_chevron-right{
+.Group-1.Textual.ICON.Union.Material-icon_chevron-right{
 
 position: absolute;
 left: -0.25%;
@@ -184,7 +241,7 @@ top: 0%;
 bottom: 0%;
 }
 
-.Path{
+.Group-1.Textual.ICON.Union.Material-icon_chevron-right.Path{
 position: absolute;
 left: 35.79%;
 right: 33.33%;
@@ -195,15 +252,13 @@ bottom: 25%;
 background: #0F172A;
 }
 
-.LABEL{
 
+.LABEL{
 position: static;
 left: 22.5px;
 right: 46.5px;
 top: 25%;
 bottom: 25%;
-
-/* Body / Bold */
 font-family: Inter;
 font-style: normal;
 font-weight: bold;
@@ -214,6 +269,7 @@ display: flex;
 align-items: center;
 text-align: center;
 font-feature-settings: 'tnum' on, 'lnum' on;
+
 
 /* Black */
 color: #0F172A;
@@ -227,7 +283,6 @@ margin: 0px 6px;
 }
 
 .GIRIS{
-  position: absolute;
 width: 59px;
 height: 48px;
 left: 808px;
@@ -245,20 +300,20 @@ font-feature-settings: 'tnum' on, 'lnum' on;
 
 /* Black */
 color: #0F172A;
+background:url("../assets/Giris.jpg") no-repeat;
 
 }
 
-._Text-state{
+._Text-state1{
   /* Auto layout */
 display: flex;
 flex-direction: row;
 align-items: flex-start;
 padding: 12px 8px;
-
 position: absolute;
 width: 463px;
 height: 48px;
-left: 800px;
+left: 80px;
 top: 519px;
 
 /* White */
@@ -266,7 +321,157 @@ background: #FFFFFF;
 border: 1px solid #E2E8F0;
 box-sizing: border-box;
 border-radius: 2px;
+}
+
+._Text-state{
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 12px 8px;
+position: absolute;
+width: 463px;
+height: 48px;
+left: 80px;
+top: 451px;
+
+/* White */
+background: #FFFFFF;
+/* Grey / Light */
+
+border: 1px solid #E2E8F0;
+box-sizing: border-box;
+border-radius: 2px;
+}
+
+
+
+.Error-Message{
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px 16px 0px 0px;
+
+position: absolute;
+width: 380px;
+height: 80px;
+left: calc(50% - 380px/2 + 490px);
+top: 904px;
+
+/* Grey / Lightest */
+background: #F8FAFC;
+border-radius: 4px;
+}
+
+
+.Line-1{
+
+position: static;
+width: 80px;
+height: 0px;
+left: 0px;
+top: 0px;
+
+/* UI / Error / Dark */
+border: 4px solid #F43F5E;
+transform: rotate(90deg);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px 16px;
+}
+
+.Frame-2{
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 16px 0px;
+
+position: static;
+width: 308px;
+height: 80px;
+left: 16px;
+top: 0px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 1;
+margin: 0px 16px;
+}
+
+._Icon{
+
+position: static;
+width: 24px;
+height: 24px;
+left: calc(50% - 24px/2 - 142px);
+top: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 8px;
+}
+
+.Description{
+
+position: static;
+width: 276px;
+height: 24px;
+left: 0px;
+top: 24px;
+
+/* Body / Default */
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+font-feature-settings: 'tnum' on, 'lnum' on;
+
+/* Black */
+color: #0F172A;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px 0px;
 
 }
 
+.Title{
+
+position: static;
+width: 276px;
+height: 24px;
+left: 0px;
+top: 0px;
+}
+
+.Otokoc-Otomotiv-Logo-1{
+  
+position: absolute;
+width: 165px;
+height: 33px;
+left: 1235px;
+top: 40px;
+
+background: url('../assets/Otokoc-Otomotiv-Logo11.png');
+}
 </style>
