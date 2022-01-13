@@ -6,7 +6,7 @@
     <div class="Material-icon">
       <div class="Union">
         <div class="Material-icon-image">
-          <div class="Path" img alt="material-icon" src="../assets/Material-icon-image.png" />
+          <div class="Path"> </div>
           </div>
         </div>
       </div>
@@ -23,25 +23,23 @@
           </div>
          
     <div class="LABEL"> 
-         <button class="btn btn-primary pull-right" @click="login()"  v-on:keyup.enter="login" type="submit" >Giriş yap</button>
+         <div class="btn btn-primary pull-right" @click="login()"  v-on:keyup.enter="login" type="submit" >Giriş Yap</div>
      </div>
       </div>
     <div class="GIRIS"> </div>
-    <div class="_Text-state" > <input type="text" v-model="username"  id="username" placeholder="Email / Kullanıcı adı" >
+    <div class="_Text-state" > <input type="text" v-model="username" class="INPUT" id="username" placeholder="Email / Kullanıcı adı" >
         <label for="username"></label> 
         </div>
-      <div class="INPUT">     </div>
     <div class="_Text-state1" > 
-      <input type="password" id="Password" placeholder="Şifre"  v-model="password"  >
+      <input type="password" id="Password" class="INPUT" placeholder="Şifre"  v-model="password"  >
         <label for="Password"></label>   
     </div>
-      <div class="INPUT"></div>
   </div>
   
 
 
 <div class="Error-Message" >
-<div class="Icon" >
+<div class="Icon2" >
 <div class="Material-icon" >
   <div class="Union" >
     <div class="Material-icon_close" >
@@ -53,8 +51,8 @@
 
 <div class="Frame-2" >
   <div class="Frame-1" >
-    <div class="Description" ></div>
-    <div class="Title" ></div>
+        <div class="Title" ><h1> Hata </h1> </div>
+    <div class="Description"><p> Kullanıcı Adınız veya Şifreniz Hatalı  </p></div>
   </div>
   <div class="_Icon" >
     <div class="Union" >
@@ -103,11 +101,10 @@ left: calc(50% - 447px/2);
 top: calc(50% - 24px/2);
 
 /* Body / Default */
-font-family: Inter;
 font-style: normal;
 font-weight: normal;
 font-size: 16px;
-line-height: 24px;
+line-height:  20px;
 /* identical to box height, or 150% */
 font-feature-settings: 'tnum' on, 'lnum' on;
 
@@ -118,8 +115,8 @@ color: #94A3B8;
 flex: none;
 order: 0;
 flex-grow: 1;
-margin: 0px 6px;
-
+margin: 0px 0px;
+border: none;
 }
 .Icon{
 position: absolute;
@@ -144,6 +141,7 @@ left: -0.25%;
 right: -0.21%;
 top: 0%;
 bottom: 0%;
+
 }
 .Union{
 position: absolute;
@@ -160,7 +158,8 @@ left: 12.5%;
 right: 12.5%;
 top: 12.5%;
 bottom: 12.5%;
-background: #0F172A;
+background:url("../assets/Material-icon-image.png");
+
 }
 
 .Group-1{
@@ -194,8 +193,8 @@ padding: 12px 24px;
 position: absolute;
 width: 139px;
 height: 48px;
-left: 120px;
-top: 130px;
+left: 340px;
+top: 250px;
 
 /* Black */
 border: 1px solid #0F172A;
@@ -313,8 +312,8 @@ padding: 12px 8px;
 position: absolute;
 width: 463px;
 height: 48px;
-left: 80px;
-top: 519px;
+left: 10px;
+top: 155px;
 
 /* White */
 background: #FFFFFF;
@@ -331,8 +330,8 @@ padding: 12px 8px;
 position: absolute;
 width: 463px;
 height: 48px;
-left: 80px;
-top: 451px;
+left: 10px;
+top: 90px;
 
 /* White */
 background: #FFFFFF;
@@ -364,25 +363,48 @@ background: #F8FAFC;
 border-radius: 4px;
 }
 
+.Icon2{
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 16px 0px 0px;
+
+position: static;
+width: 24px;
+height: 80px;
+left: 340px;
+top: 0px;
+
+opacity: 0.2;
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+margin: 0px 16px;
+}
 
 .Line-1{
 
 position: static;
-width: 80px;
+width: 70px;
 height: 0px;
 left: 0px;
 top: 0px;
 
 /* UI / Error / Dark */
-border: 4px solid #F43F5E;
+border: 3px solid #F43F5E;
 transform: rotate(90deg);
 
 /* Inside auto layout */
 flex: none;
 order: 0;
-align-self: stretch;
+align-self: center;
 flex-grow: 0;
-margin: 0px 16px;
+margin: 35px -40px;
+border-radius:5;
 }
 
 .Frame-2{
@@ -427,9 +449,9 @@ margin: 0px 8px;
 
 position: static;
 width: 276px;
-height: 24px;
+height: 5px;
 left: 0px;
-top: 24px;
+top: 50px;
 
 /* Body / Default */
 font-family: Inter;
@@ -459,7 +481,7 @@ margin: 0px 0px;
 
 position: static;
 width: 276px;
-height: 24px;
+height:30px;
 left: 0px;
 top: 0px;
 }

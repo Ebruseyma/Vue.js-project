@@ -7,12 +7,7 @@ const routes = [
     name: "Login",
     component: Login,
   },
-  {
-    path:"/Dashboard",
-    name:"Dashboard",
-    component: () =>
-      import("../views/Dashboard.vue")
-  },
+
  
 ];
 
